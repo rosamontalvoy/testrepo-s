@@ -3,3 +3,9 @@ DOCTYPE!> HTML
     <Title> "my first code by zero"
   </head>
 # I will add more codes 
+
+function Person (name, age) {
+  this.name = Rosa;
+  this.age = 28;
+  return = this;
+  }
