@@ -1,201 +1,25 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# <center>
-#     <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/IDSNlogo.png" width="300" alt="cognitiveclass.ai logo"  />
-# </center>
-# 
-# # Writing Your First Python Code
-# 
-# Estimated time needed: **25** minutes
-# 
-# ## Objectives
-# 
-# After completing this lab you will be able to:
-# 
-# *   Write basic code in Python
-# *   Work with various types of data in Python
-# *   Convert the data from one type to another
-# *   Use expressions and variables to perform operations
-# 
-
-# <h2>Table of Contents</h2>
-# <div class="alert alert-block alert-info" style="margin-top: 20px">
-#     <ul>
-#         <li>
-#             <a href="https://#hello">Say "Hello" to the world in Python</a>
-#             <ul>
-#                 <li><a href="https://version/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">What version of Python are we using?</a></li>
-#                 <li><a href="https://comments/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Writing comments in Python</a></li>
-#                 <li><a href="https://errors/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Errors in Python</a></li>
-#                 <li><a href="https://python_error/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Does Python know about your error before it runs your code?</a></li>
-#                 <li><a href="https://exercise/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Exercise: Your First Program</a></li>
-#             </ul>
-#         </li>
-#         <li>
-#             <a href="https://#types_objects">Types of objects in Python</a>
-#             <ul>
-#                 <li><a href="https://int/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Integers</a></li>
-#                 <li><a href="https://float/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Floats</a></li>
-#                 <li><a href="https://convert/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Converting from one object type to a different object type</a></li>
-#                 <li><a href="https://bool/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Boolean data type</a></li>
-#                 <li><a href="https://exer_type/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Exercise: Types</a></li>
-#             </ul>
-#         </li>
-#         <li>
-#             <a href="https://#https://exp/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01ressions">Expressions and Variables</a>
-#             <ul>
-#                 <li><a href="exp">Expressions</a></li>
-#                 <li><a href="https://exer_exp/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Exercise: Expressions</a></li>
-#                 <li><a href="https://var/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Variables</a></li>
-#                 <li><a href="https://exer_exp_var/?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork19487395-2021-01-01">Exercise: Expression and Variables in Python</a></li>
-#             </ul>
-#         </li>
-#     </ul>
-#     <p>
-#         Estimated time needed: <strong>25 min</strong>
-#     </p>
-# </div>
-# 
-# <hr>
-# 
-
-# <h2 id="hello">Say "Hello" to the world in Python</h2>
-# 
-
-# When learning a new programming language, it is customary to start with an "hello world" example. As simple as it is, this one line of code will ensure that we know how to print a string in output and how to execute code within cells in a notebook.
-# 
-
-# <hr/>
-# <div class="alert alert-success alertsuccess" style="margin-top: 20px">
-# [Tip]: To execute the Python code in the code cell below, click on the cell to select it and press <kbd>Shift</kbd> + <kbd>Enter</kbd>.
-# </div>
-# <hr/>
-# 
-
-# In[2]:
-
+Writing Your First Python Code
 
 ("Hello, Python!")
 
 print('Hello, Python!')
 
 
-# After executing the cell above, you should see that Python prints <code>Hello, Python!</code>. Congratulations on running your first Python code!
-# 
-
-# <hr/>
-# <div class="alert alert-success alertsuccess" style="margin-top: 20px">
-#     [Tip:] <code>print()</code> is a function. You passed the string <code>'Hello, Python!'</code> as an argument to instruct Python on what to print.
-# </div>
-# <hr/>
-# 
-
-# <h3 id="version">What version of Python are we using?</h3>
-# 
-
-# <p>
-#     There are two popular versions of the Python programming language in use today: Python 2 and Python 3. The Python community has decided to move on from Python 2 to Python 3, and many popular libraries have announced that they will no longer support Python 2.
-# </p>
-# <p>
-#     Since Python 3 is the future, in this course we will be using it exclusively. How do we know that our notebook is executed by a Python 3 runtime? We can look in the top-right hand corner of this notebook and see "Python 3".
-# </p>
-# <p>
-#     We can also ask Python directly and obtain a detailed answer. Try executing the following code:
-# </p>
-# 
-
-# In[3]:
-
-
-
-
 import sys
 print(sys.version)
 
 
-# <hr/>
-# <div class="alert alert-success alertsuccess" style="margin-top: 20px">
-#     [Tip:] <code>sys</code> is a built-in module that contains many system-specific parameters and functions, including the Python version in use. Before using it, we must explictly <code>import</code> it.
-# </div>
-# <hr/>
-# 
-
-# <h3 id="comments">Writing comments in Python</h3>
-# 
-
-# <p>
-#     In addition to writing code, note that it's always a good idea to add comments to your code. It will help others understand what you were trying to accomplish (the reason why you wrote a given snippet of code). Not only does this help <strong>other people</strong> understand your code, it can also serve as a reminder <strong>to you</strong> when you come back to it weeks or months later.</p>
-# 
-# <p>
-#     To write comments in Python, use the number symbol <code>#</code> before writing your comment. When you run your code, Python will ignore everything past the <code>#</code> on a given line.
-# </p>
-# 
-
-# In[10]:
-
-
-# Practice on writing comments
-
 print('Hello, Python! This line prints a string')
 print('Hi')
-
-
-# <p>
-#     After executing the cell above, you should notice that <code>This line prints a string</code> did not appear in the output, because it was a comment (and thus ignored by Python).
-# </p>
-# <p>
-#     The second line was also not executed because <code>print('Hi')</code> was preceded by the number sign (<code>#</code>) as well! Since this isn't an explanatory comment from the programmer, but an actual line of code, we might say that the programmer <em>commented out</em> that second line of code.
-# </p>
-# 
-
-# <h3 id="errors">Errors in Python</h3>
-# 
-
-# <p>Everyone makes mistakes. For many types of mistakes, Python will tell you that you have made a mistake by giving you an error message. It is important to read error messages carefully to really understand where you made a mistake and how you may go about correcting it.</p>
-# <p>For example, if you spell <code>print</code> as <code>frint</code>, Python will display an error message. Give it a try:</p>
-# 
-
-# In[11]:
-
 
 # Print string as error message
 
 frint("Hello, Python!")
 
 
-# <p>The error message tells you: 
-# <ol>
-#     <li>where the error occurred (more useful in large notebook cells or scripts), and</li> 
-#     <li>what kind of error it was (NameError)</li> 
-# </ol>
-# <p>Here, Python attempted to run the function <code>frint</code>, but could not determine what <code>frint</code> is since it's not a built-in function and it has not been previously defined by us either.</p>
-# 
-
-# <p>
-#     You'll notice that if we make a different type of mistake, by forgetting to close the string, we'll obtain a different error (i.e., a <code>SyntaxError</code>). Try it below:
-# </p>
-# 
-
-# In[12]:
-
-
 # Try to see built-in error message
 
 print("Hello, Python!)
-
-
-# <h3 id="python_error">Does Python know about your error before it runs your code?</h3>
-# 
-
-# Python is what is called an <em>interpreted language</em>. Compiled languages examine your entire program at compile time, and are able to warn you about a whole class of errors prior to execution. In contrast, Python interprets your script line by line as it executes it. Python will stop executing the entire program when it encounters an error (unless the error is expected and handled by the programmer, a more advanced subject that we'll cover later on in this course).
-# 
-
-# Try to run the code in the cell below and see what happens:
-# 
-
-# In[13]:
-
 
 # Print string and error to see the running order
 
@@ -204,75 +28,14 @@ frint("This will cause an error")
 print("This will NOT be printed")
 
 
-# <h3 id="exercise">Exercise: Your First Program</h3>
-# 
-
-# <p>Generations of programmers have started their coding careers by simply printing "Hello, world!". You will be following in their footsteps.</p>
-# <p>In the code cell below, use the <code>print()</code> function to print out the phrase: <code>Hello, world!</code></p>
-# 
-
-# In[14]:
-
-
 ("Hello, world!")
 print("Hello, world!")
 
-
-# <details><summary>Click here for the solution</summary>
-# 
-# ```python
-# print("Hello, world!")
-# 
-# ```
-# 
-# </details>
-# 
-
-# <p>Now, let's enhance your code with a comment. In the code cell below, print out the phrase: <code>Hello, world!</code> and comment it with the phrase <code>Print the traditional hello world</code> all in one line of code.</p>
-# 
-
-# In[16]:
-
-
 print("Hello, world") # Print the traditional hello world
-
-
-# <details><summary>Click here for the solution</summary>
-# 
-# ```python
-# print("Hello, world!") # Print the traditional hello world
-# 
-# ```
-# 
-# </details>
-# 
-
-# <hr>
-# 
-
-# <h2 id="types_objects" align="center">Types of objects in Python</h2>
-# 
-
-# <p>Python is an object-oriented language. There are many different types of objects in Python. Let's start with the most common object types: <i>strings</i>, <i>integers</i> and <i>floats</i>. Anytime you write words (text) in Python, you're using <i>character strings</i> (strings for short). The most common numbers, on the other hand, are <i>integers</i> (e.g. -1, 0, 100) and <i>floats</i>, which represent real numbers (e.g. 3.14, -42.0).</p>
-# 
-
-# <a align="center">
-#     <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%201/images/TypesObjects.png" width="600">
-# </a>
-# 
-
-# <p>The following code cells contain some examples.</p>
-# 
-
-# In[ ]:
-
 
 # Integer
 
 11
-
-
-# In[ ]:
 
 
 # Float
@@ -287,77 +50,21 @@ print("Hello, world") # Print the traditional hello world
 
 "Hello, Python 101!"
 
-
-# <p>You can get Python to tell you the type of an expression by using the built-in <code>type()</code> function. You'll notice that Python refers to integers as <code>int</code>, floats as <code>float</code>, and character strings as <code>str</code>.</p>
-# 
-
-# In[ ]:
-
-
 # Type of 12
 
 type(12)
-
-
-# In[ ]:
-
 
 # Type of 2.14
 
 type(2.14)
 
-
-# In[ ]:
-
-
-# Type of "Hello, Python 101!"
-
 type("Hello, Python 101!")
 
-
-# <p>In the code cell below, use the <code>type()</code> function to check the object type of <code>12.0</code>.
-# 
-
-# In[17]:
-
-
 type(12.0)
-
-
-# <details><summary>Click here for the solution</summary>
-# 
-# ```python
-# type(12.0)
-# 
-# ```
-# 
-# </details>
-# 
-
-# <h3 id="int">Integers</h3>
-# 
-
-# <p>Here are some examples of integers. Integers can be negative or positive numbers:</p>
-# 
-
-# <a align="center">
-#     <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%201/images/TypesInt.png" width="600">
-# </a>
-# 
-
-# <p>We can verify this is the case by using, you guessed it, the <code>type()</code> function:
-# 
-
-# In[ ]:
-
 
 # Print the type of -1
 
 type(-1)
-
-
-# In[ ]:
-
 
 # Print the type of 4
 
@@ -370,18 +77,6 @@ type(4)
 # Print the type of 0
 
 type(0)
-
-
-# <h3 id="float">Floats</h3> 
-# 
-
-# <p>Floats represent real numbers; they are a superset of integer numbers but also include "numbers with decimals". There are some limitations when it comes to machines representing real numbers, but floating point numbers are a good representation in most cases. You can learn more about the specifics of floats for your runtime environment, by checking the value of <code>sys.float_info</code>. This will also tell you what's the largest and smallest number that can be represented with them.</p>
-# 
-# <p>Once again, can test some examples with the <code>type()</code> function:
-# 
-
-# In[ ]:
-
 
 # Print the type of 1.0
 
