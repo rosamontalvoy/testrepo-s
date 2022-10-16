@@ -1,0 +1,7 @@
+album_sales_dict = {"Back in black":50 , "The bodyguard":50 , "Thriller":65}
+album_sales_dict["Thriller"]
+65
+album_sales_dict.keys()
+dict_keys(['Back in black', 'The bodyguard', 'Thriller'])
+album_sales_dict.values()
+dict_values([50, 50, 65])
